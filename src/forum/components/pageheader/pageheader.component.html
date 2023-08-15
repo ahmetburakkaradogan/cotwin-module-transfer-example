@@ -1,0 +1,51 @@
+<div class="pageheader">
+  <app-breadcrumb></app-breadcrumb>
+
+  <div class="pageheader-header flex flex-wrap align-items-center justify-content-between h-auto">
+        <div class="flex flex-wrap align-items-center">
+            <div class="flex flex-wrap align-items-baseline pageheader-title">
+                <h4 class="mr-2">
+                    {{data.title}}
+                </h4>
+                <b class="small">{{data.subTitle}}</b>
+            </div>
+        </div>
+        <div class="mr-2 my-2 sm:my-0 pageheader-action-container">
+            <ng-container *ngFor="let action of data?.menuActions">
+                <ng-container  *ngIf="action && (action.feature | featureCheck)" >
+                    <ng-container *ngIf="action.items; else menuButtonBlock">
+                        <p-menu #actionMenu
+                                [model]="action.items"
+                                [popup]="true"
+                                [styleClass]="action.items[0].styleClass"
+                                [showTransitionOptions]="'0ms'"></p-menu>
+                        <button (click)="actionMenu.toggle($event)" [icon]="action.icon"
+                                [label]="action.label"
+                                [style]="action.style"
+                                [pTooltip]="action.tooltip"
+                                [tooltipPosition]="action.tooltipPosition"
+                                class="mr-2 pageheader-action"
+                                pButton
+                                type="button"></button>
+                    </ng-container>
+
+                    <ng-template #menuButtonBlock>
+                        <button (click)="action.command()" [icon]="action.icon"
+                                [label]="action.label"
+                                [pTooltip]="action.tooltip"
+                                [tooltipPosition]="action.tooltipPosition"
+                                [style]="action.style"
+                                [disabled]="action.disabled"
+                                [ngClass]="action.styleClass"
+                                class="mr-2 {{action.class}} pageheader-action"
+                                pButton
+                                type="button"></button>
+                    </ng-template>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <div class="pageheader-content">
+      <ng-content></ng-content>
+    </div>
+</div>

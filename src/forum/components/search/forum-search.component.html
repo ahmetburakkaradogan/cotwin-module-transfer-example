@@ -1,0 +1,7 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control col-12 " pInputText placeholder="{{'general.search' | translate}}"
+         (keydown.enter)="search($event)">
+</div>
+
+<app-forum-search-results *ngIf="searchKeyword != undefined" [filter]="searchKeyword"></app-forum-search-results>
+

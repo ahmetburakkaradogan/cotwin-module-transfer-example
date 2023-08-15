@@ -1,0 +1,37 @@
+.big-arrow {
+  font-size: 4rem;
+}
+
+.active {
+  color: #34A835;
+}
+
+.vote-icon {
+  &.UP{
+    color: #34A835;
+  }
+  &.DOWN{
+    color: red;
+  }
+  &.inactive{
+    color: var(--gray-400)
+  }
+}
+
+.vote-button{
+  &.up-vote{
+    &.active{
+      color: #34A835;
+    }
+
+  }
+  &.down-vote{
+    &.active{
+      color: red;
+    }
+
+  }
+  &.inactive{
+    color: var(--gray-400)
+  }
+}

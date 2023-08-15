@@ -1,0 +1,65 @@
+<script src="view-post.component.ts"></script>
+<div class="grid p-0 m-0">
+
+<!--  Post Header -->
+  <div id="post-header" class="col-12 flex justify-content-between surface-600 text-white" style="height: 30px">
+    <p>{{post.createdDate | date: "dd.MM.yyyy HH:mm"}}</p>
+    <div class="inline-flex align-items-center" style="gap: 0.5rem;">
+      <button pButton pRipple *ngIf="ownPost" icon="pi pi-pencil" class="p-button-rounded p-button-text" style="color: white;" [pTooltip]="'general.edit' | translate" (click)="toggleEdit()"></button>
+      <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text" *ngIf="ownPost" style="color: white;" [pTooltip]="'general.delete' | translate" (click)="deletePost()"></button>
+      <p>#{{postIndex}}</p>
+    </div>
+  </div>
+
+
+  <div class="col-12 grid p-0 m-0 mb-2">
+
+    <!--  User Info -->
+
+    <div id="user-info" class="surface-100 mr-2 col-12 lg:col-2">
+      <div id="user-info-large">
+        <a [routerLink]="userRoute" class="pb-2 pt-2">{{post.user.login}}</a>
+        <p>{{post.user.firstName}} {{post.user.lastName}}</p>
+        <p class="text-base">{{post.user.email}}</p>
+        <p-image [src]="userProfileImageSource"  alt="Image" [preview]="true" width="100px" height="100px"></p-image>
+        <p>{{languages}}</p>
+        <p class="font-semibold pb-2">{{role}}</p>
+      </div>
+      <div id="user-info-small">
+        <p-image [src]="userProfileImageSource"  alt="Image" [preview]="true" width="100px" height="100px"></p-image>
+        <div>
+          <a [routerLink]="userRoute" class="pb-2 pt-2 text-4xl">{{post.user.login}}</a>
+          <p class="font-semibold pb-2">{{role}}</p>
+        </div>
+      </div>
+    </div>
+    <!--    Post view body -->
+
+    <div *ngIf="!editView" id="post-info-container" class="flex flex-column flex-grow-1 col-12 lg:col-9">
+
+      <div id="post-title" class="border-bottom-1">
+        {{post.title}}
+      </div>
+      <div id="post-body" class="flex flex-grow-1">
+        <div id="post-body-text-container">
+          <app-quote-post *ngIf="quoteInfo" [data]="quoteInfo" [postIndex]="quoteInfo.postIndex" class="mb-2"></app-quote-post>
+          <div [innerHTML]="post.body"></div>
+        </div>
+        <div id="post-body-vote-reply-container">
+          <app-vote [smallMode]="false" [ownVote]="post.ownVote" [voteCount]="post.calculatedVoteCount" (vote)="onVote($event)"></app-vote>
+          <div class="flex justify-content-center">
+            <button pButton pRipple class="mt-4 p-button-secondary" (click)="onReply()" style="min-width: 59.3px;">{{'Thread.post.replyLabel' | translate}} </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--  Post edit view body-->
+    <div *ngIf="editView" class="flex-grow-1 col-12 lg:col-9">
+      <app-edit-post class="h-full" [threadId]="threadId" [fullText]="fullText" [post]="post" (onSave)="editPost($event)" (onCancel)="cancelEdit()"></app-edit-post>
+    </div>
+
+  </div>
+
+</div>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>

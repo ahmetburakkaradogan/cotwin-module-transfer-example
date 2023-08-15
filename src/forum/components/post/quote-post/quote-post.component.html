@@ -1,0 +1,14 @@
+{{'Thread.quotePost.title' | translate}}:
+<div class="surface-100 shadow-3 grid mt-1">
+  <div id="title" class="flex align-content-around flex-grow-1">
+    <div class="col-11">
+      <p>#{{data.postId}} {{'Thread.quotePost.sender' | translate}}:  <a id="userId" [routerLink]="userRoute">{{data.userLogin}}</a>, {{'Thread.quotePost.createdTime' | translate}}: {{data.postCreatedTime}}</p>
+    </div>
+    <div class="col-1 flex justify-content-end">
+      <a [routerLink]="[threadRoute]" [fragment]="'post'+data.postIndex" pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined"></a>
+    </div>
+  </div>
+  <div id="body" class="col-12" [innerHTML]="data.postBody">
+  </div>
+</div>
+<br>

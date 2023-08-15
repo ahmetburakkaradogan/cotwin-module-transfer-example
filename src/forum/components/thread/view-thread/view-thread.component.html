@@ -1,0 +1,32 @@
+<div class="flex flex-column justify-content-center">
+  <p-paginator
+    [rowsPerPageOptions]="[5,10,50,100,250,1000]"
+    [showCurrentPageReport]="true"
+    [totalRecords]="data.totalItems"
+    [first]="pageable.page * pageable.size"
+    [currentPageReportTemplate]="'general.currentPageReportTemplate' | translate"
+    (onPageChange)="paginate($event)"
+  ></p-paginator>
+  <div id="post-container">
+    <app-view-post *ngFor="let post of posts; let i = index;"
+                   [id]="'post'+ (i+pageable.page*pageable.size+1)"
+                   [post]="post"
+                   [threadId]="id"
+                   [postIndex]="i+pageable.page*pageable.size+1"
+                   (onReplyPost)="scrollToCreateNewPost($event)"
+                   (onDelete)="onPostRemove($event)"
+                   class="view-post"
+    ></app-view-post>
+  </div>
+  <p-paginator
+    [rowsPerPageOptions]="[5,10,50,100,250,1000]"
+    [showCurrentPageReport]="true"
+    [totalRecords]="data.totalItems"
+    [first]="pageable.page * pageable.size"
+    [currentPageReportTemplate]="'general.currentPageReportTemplate' | translate"
+    (onPageChange)="paginate($event)"
+  ></p-paginator>
+  <div id="new-post" class="card inline mt-2 justify-content-center" tabindex="1">
+    <app-create-post class="flex-grow-1" [threadId]="id" [newPostIndex]="+data.totalItems + 1" (onSave)="onNewPost($event)"></app-create-post>
+  </div>
+</div>

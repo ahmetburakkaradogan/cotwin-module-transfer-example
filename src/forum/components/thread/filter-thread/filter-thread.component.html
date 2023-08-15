@@ -1,0 +1,38 @@
+<form class="flex gap-5 p-4 m-4 border-1 border-400 flex-wrap" [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+    <span class="p-float-label">
+        <input pInputText id="threadName" formControlName="threadName"/>
+        <label htmlFor="threadName">{{"Forum.filter.threadName" | translate}}</label>
+    </span>
+
+    <span class="p-float-label">
+        <input pInputText id="createdBy" formControlName="createdBy" />
+        <label htmlFor="createdBy">{{"Forum.filter.createdBy" | translate}}</label>
+    </span>
+
+    <span class="p-float-label" >
+        <p-inputNumber inputId="minVotes" formControlName="minVotes" > </p-inputNumber>
+        <label htmlFor="minVotes">{{"Forum.filter.minVotes" | translate}}</label>
+    </span>
+
+    <span class="p-float-label">
+        <p-inputNumber inputId="maxVotes" formControlName="maxVotes"> </p-inputNumber>
+        <label htmlFor="maxVotes">{{"Forum.filter.maxVotes" | translate}}</label>
+    </span>
+
+    <span class="p-float-label">
+        <p-inputNumber inputId="minComments" formControlName="minComments"> </p-inputNumber>
+        <label htmlFor="minComments">{{"Forum.filter.minComments" | translate}}</label>
+    </span>
+
+    <span class="p-float-label">
+        <p-inputNumber inputId="maxComments" formControlName="maxComments"> </p-inputNumber>
+        <label htmlFor="maxComments">{{"Forum.filter.maxComments" | translate}}</label>
+    </span>
+
+    <!-- submit -->
+    <button pButton type="submit" [label]="'Thread.filterLabel' | translate" icon="pi pi-fw pi-filter" class="p-button-success"></button>
+
+    <!-- reset filters -->
+    <p-button icon="pi pi-fw pi-undo" class="p-button-secondary" styleClass="p-button-rounded" (click)="resetFilters()"></p-button>
+      
+</form>

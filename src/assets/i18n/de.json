@@ -1,0 +1,72 @@
+{
+"Forum": {
+    "page": {
+      "title": "Beiträge"
+    },
+    "search": {
+      "title": "Suche im Forum"
+    },
+    "filter": {
+      "threadName": "Thread Name",
+      "createdBy": "Erstellt von",
+      "minVotes": "Min Stimmenzahl",
+      "maxVotes": "Max Stimmenzahl",
+      "minComments": "Min Kommentare",
+      "maxComments": "Max Kommentare"
+    }
+  },
+  "Thread": {
+    "browserLabel": "Suchen",
+    "filterLabel": "Filtern",
+    "postedBy": "Verfasst von",
+    "postedByUserAtTime": "gepostet von {{user}} {{time}}",
+    "ago": "früher",
+    "alreadyVoted": "Habe bereits für diesen Thread gestimmt",
+    "edited": "Thema bearbeitet",
+    "deleted": "Thema gelöscht",
+    "titleEmptyError": "Thread-Titel darf nicht leer sein",
+    "deleteConfirmation": "Möchten Sie diesen Thread wirklich löschen?",
+    "createThread": {
+      "createLabel": "Anlegen",
+      "title": "Thread anlegen",
+      "toolTip": "Neues Thread anlegen",
+      "requiredTitle": "Thread-Titel darf nicht leer sein.",
+      "maxLengthTitle": "Die maximale Titellänge beträgt 200 Zeichen.",
+      "requiredBody": "Der Thread-Hauptteil darf nicht leer sein"
+    },
+    "headers": {
+      "votes": "Abstimmung",
+      "posts": "Beiträge",
+      "comments": "Kommentare",
+      "thread": "Threads"
+    },
+    "view": {
+      "title": "Thread View",
+      "back": "Zurück",
+      "newPost": "Neue Post"
+    },
+    "post": {
+      "replyLabel": "Antwort",
+      "replyPrefix": "Aw: ",
+      "alreadyVoted": "Habe bereits für diesen Beitrag gestimmt",
+      "deleteConfirmation": "Möchten Sie diesen Beitrag wirklich löschen?",
+      "deleted": "Beitrag gelöscht",
+      "edited": "Beitrag bearbeitet",
+      "cannotDeleteFirstPost": "Der erste Beitrag eines Threads kann nicht gelöscht werden",
+      "defaultTitle": "Titel"
+    },
+    "quotePost": {
+      "title": "Quote",
+      "sender": "Message sender ",
+      "createdTime": "Created Date"
+    },
+    "search": {
+      "votes": "Stimmen",
+      "posts": "gefunden in {{postNum}} Kommentaren",
+      "foundInMore": {
+        "plural": "Gefunden in {{postNum}} weiteren Beiträgen",
+        "singular": "Gefunden in einem weiteren Beitrag"
+      }
+    }
+  }
+}

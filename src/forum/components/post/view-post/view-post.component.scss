@@ -1,0 +1,32 @@
+#user-info{
+  word-wrap: break-word;
+}
+
+#post-body-text-container{
+  font-size: 1.25rem !important;
+  flex-grow: 1;
+}
+
+#post-body-vote-reply-container{
+  display: flex;
+  flex-direction: column;
+  min-width: 59.3px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 991px) {
+  #user-info-large { display: none; }
+  #user-info-small{
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  #user-info-small { display: none; }
+  #user-info-large {
+    font-size: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

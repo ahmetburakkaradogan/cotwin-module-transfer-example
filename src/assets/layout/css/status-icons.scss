@@ -1,0 +1,101 @@
+// add new icons here
+$status-red: #DE6F6F;
+$status-yellow: #f1c513;
+$status-green: #21A675;
+$status-default: black;
+$disabled-button-color: rgba(0, 0, 0, 0.2);
+
+$status-icon-data: (
+  "newly_added": (
+    button-color: $status-default,
+    "icon": '../images/statuses/newly-added-icon.svg'
+  ),
+  "configured": (
+    button-color: $status-default,
+    "icon": '../images/statuses/configured-icon.svg'
+  ),
+  "ordered": (
+    button-color: $status-default,
+    "icon": '../images/statuses/ordered-icon.svg'
+  ),
+  "scheduling": (
+    button-color: $status-default,
+    "icon": '../images/statuses/scheduling-icon.svg'
+  ),
+  "assembly": (
+    button-color: $status-default,
+    "icon": '../images/statuses/assembly-icon.svg'
+  ),
+  "delivery": (
+    button-color: $status-default,
+    "icon": '../images/statuses/delivery-icon.svg'
+  ),
+  "error": (
+    button-color: $status-red,
+    "icon": '../images/statuses/circle-icon.svg'
+  ),
+  'in_use': (
+    button-color: $status-green,
+    "icon": '../images/statuses/circle-icon.svg'
+  ),
+  "planned_downtime": (
+    button-color: $status-yellow,
+    "icon": '../images/statuses/circle-icon.svg'
+  ),
+  'unplanned_downtime': (
+    button-color: $status-red,
+    "icon": '../images/statuses/circle-icon.svg'
+  ),
+);
+
+@mixin status-icon($url, $color) {
+  height: 4em;
+  width: 4em;
+  display: inline-block;
+  margin-left: 4px;
+
+  -webkit-mask-image: url($url);
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: $color;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.status-container-machine-list {
+  display: flex;
+  align-items: center;
+}
+
+.status-icon-default {
+  @include status-icon('../images/ellipse.svg', $disabled-button-color);
+  height: .7em;
+  width: .7em;
+}
+
+@mixin status-class-generator {
+  @each $name, $data in $status-icon-data {
+    .status-circle-#{$name} { // active icon classes
+      $icon: map-get($data, "icon");
+      $button-color: map-get($data, "button-color");
+
+      @include status-icon($icon, $button-color);
+    }
+    .status-circle-#{$name}-disabled { // disabled classes
+      @extend .status-icon-default
+    }
+    //.status-circle-#{$name}-disabled:hover { // hover behaviour for disabled classes
+    //  $icon: map-get($data, "icon");
+    //  $button-color: $disabled-button-color;
+    //
+    //  @include status-circle-default($icon, $button-color);
+    //}
+  }
+}
+
+@include status-class-generator;

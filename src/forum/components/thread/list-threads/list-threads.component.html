@@ -1,0 +1,79 @@
+<div>
+  <div class="gap-5">
+    <div class="flex flex-wrap justify-content-center card-container mx-8 row-gap-4">
+      <button pButton type="button" [label]="'Thread.createThread.createLabel' | translate" icon="pi pi-fw pi-plus" class="p-button-lg mr-4 flex-grow-1" (click)="router.navigate(['/threads/new'])" ></button>
+      <button pButton type="button" [label]="'Thread.browserLabel' | translate" icon="pi pi-fw pi-search" class="p-button-lg mr-4 flex-grow-1"  (click)="router.navigate(['/forum/search'])"></button>
+      <button pButton type="button" [label]="'Thread.filterLabel' | translate" icon="pi pi-fw pi-filter" class="p-button-lg mr-4 flex-grow-1" (click)="toggleShowFilters()"></button>
+    </div>
+  </div>
+
+  <div *ngIf="showFilters" class="flex w-full justify-content-center">
+    <app-filter-thread (filterOutput)="setFilter($event)"></app-filter-thread>
+  </div>
+
+  <div class="card h-100 block mt-4">
+    <p-paginator
+      [rowsPerPageOptions]="[5,10,50,100,250,1000]"
+      [showCurrentPageReport]="true"
+      [totalRecords]="data.totalItems"
+      [first]="pageable.page * pageable.size"
+      [currentPageReportTemplate]="'general.currentPageReportTemplate' | translate"
+      (onPageChange)="paginate($event)"
+    ></p-paginator>
+    <p-table [columns]="cols" [value]="threads" editMode="row" dataKey="id">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+          <th style="max-width:13px"></th>
+        </tr>
+
+      </ng-template>
+
+      <ng-template pTemplate="body" let-item let-editing="editing" let-ri="rowIndex" id="thread-table-body">
+        <tr [pEditableRow]="item">
+          <td class="font-semibold w-10rem">
+            <app-vote [smallMode]="true" [ownVote]="item.ownVote" [voteCount]="item.calculatedVoteCount" (vote)="onVote($event, item)"></app-vote>
+          </td>
+          <td class="w-9">
+            <p-cellEditor class="thread-title-editor">
+              <ng-template pTemplate="input">
+                <input class="thread-title-input" pInputText type="text" [(ngModel)]="item.title">
+              </ng-template>
+              <ng-template pTemplate="output">
+               <div class="flex flex-column text-xl font-semibold thread-title-output">
+                 <a routerLink="/{{threadViewRoute | strReplace:':id' : item.id}}">{{item.title}}</a>
+                 <small class="font-light text-lg">{{'Thread.postedBy' | translate}} {{item.user.login}} {{item.createdDate | dateAgo}}</small>
+               </div>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td class="justify-content-center font-semibold w-10rem">
+            <label for="comment-button">{{item.postCount}}</label>
+            <button id="comment-button" pButton pRipple type="button" icon="pi pi-comments" class="p-button-rounded p-button-text" routerLink="/{{threadViewRoute | strReplace:':id' : item.id}}"></button>
+          </td>
+          <td class="w-1rem">
+            <div *ngIf="!editing && item.user.id == ownId" class="inline-flex align-items-center">
+              <button pButton pRipple pInitEditableRow icon="pi pi-pencil" class="p-button-rounded p-button-text" style="color: var(--gray-600);" (click)="onRowEditInit(item)"></button>
+              <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text" style="color: var(--gray-600);" (click)="deleteThread(item.id)"></button>
+            </div>
+            <div *ngIf="editing && item.user.id == ownId" class="inline-flex align-items-center">
+              <button pButton pRipple pSaveEditableRow icon="pi pi-check" class="p-button-rounded p-button-text" style="color: var(--gray-600);"  (click)="onRowEditSave(item, ri)"></button>
+              <button pButton pCancelEditableRow icon="pi pi-times" class="p-button-rounded p-button-text" style="color: var(--gray-600);" (click)="onRowEditCancel(item, ri)"></button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <p-paginator
+    [rowsPerPageOptions]="[5,10,50,100,250,1000]"
+    [showCurrentPageReport]="true"
+    [totalRecords]="data.totalItems"
+    [first]="pageable.page * pageable.size"
+    [currentPageReportTemplate]="'general.currentPageReportTemplate' | translate"
+    (onPageChange)="paginate($event)"
+  ></p-paginator>
+</div>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>

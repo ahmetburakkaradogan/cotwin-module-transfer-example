@@ -1,0 +1,6 @@
+<app-pageheader [data]="pageHeaderData">
+
+  <div class="card h-100">
+    <app-view-thread (onPageHeaderData)="updatePageHeader($event)" [id]="id"></app-view-thread>
+  </div>
+</app-pageheader>

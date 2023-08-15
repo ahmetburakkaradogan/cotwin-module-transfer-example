@@ -1,0 +1,20 @@
+<form [formGroup]="threadForm" class="flex flex-column">
+  <div class="field">
+    <span class="p-input-icon-left flex">
+      <i class="pi pi-code"></i>
+      <input type="text" pInputText placeholder="Title" class="flex-grow-1" [formControlName]="title">
+    </span>
+    <small *ngIf="threadForm.get('title').hasError('maxlength')" class="p-error block">{{'Thread.createThread.maxLengthTitle' | translate}}</small>
+    <small *ngIf="threadForm.get('title').hasError('required')" class="p-error block">{{'Thread.createThread.requiredTitle' | translate}}</small>
+  </div>
+  <div class="field">
+    <p-editor [style]="{'height': '320px'}" [formControlName]="text"></p-editor>
+    <small *ngIf="threadForm.get('text').hasError('required')" class="p-error block">{{'Thread.createThread.requiredBody' | translate}}</small>
+  </div>
+  <form-buttons
+    customClass="flex flex-wrap align-items-center justify-content-start"
+    [saveEnabled]="threadForm.valid"
+    [cancelCallback]="cancelCallback"
+    [saveCallback]="saveCallback"
+  ></form-buttons>
+</form>

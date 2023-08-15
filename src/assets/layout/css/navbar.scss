@@ -1,0 +1,77 @@
+@import 'app-consts';
+
+$icon-data: (
+  "pi-home": '../images/navbar/dashboard-icon.svg',
+  "pi-palette": '../images/navbar/product-icon.svg',
+  "pi-compass": '../images/navbar/plan-icon.svg',
+  "pi-car": '../images/navbar/run-icon.svg',
+  "pi-play": '../images/navbar/build-icon.svg',
+  "pi-cog": '../images/navbar/settings-icon.svg',
+  "pi-paperclip": '../images/navbar/knowledge-icon.svg',
+  "pi-book": '../images/navbar/forum-icon.svg',
+  "pi-folder-open": '../images/navbar/hardware-icon.svg',
+);
+
+$height: 60px;
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-3px);
+  }
+  80% {
+    transform: translateY(-1px);
+  }
+  40% {
+    transform: translateY(2px);
+  }
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid rgba(128, 128, 128, 0.25) 1px;
+}
+
+li.active-item {
+  background-color: $active-background-color !important;
+
+  i {
+    background-color: $hover-icon-color;
+  }
+}
+
+li:hover {
+  background-color: $hover-background-color !important;
+
+  i {
+    animation: shake 1s ease;
+  }
+}
+
+.layout-sidebar {
+  background-color: $primary-color;
+  box-shadow: 3px 3px 6px #bebebe;
+}
+
+@mixin icon-class-generator {
+  @each $name, $url in $icon-data {
+    .#{$name} {
+      height: $height;
+
+      -webkit-mask-image: url($url);
+      -webkit-mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: $icon-color;
+    }
+    .#{$name}:before {
+      content: '';
+    }
+  }
+}
+
+@include icon-class-generator;

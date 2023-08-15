@@ -1,0 +1,51 @@
+<div *ngFor="let dto of result.items" class="grid search-result-item mr-3 ml-3 md-3">
+  <div class="col-1 thread-info">
+    <div class="col-12"
+         [ngClass]="{'positiveVote':dto.calculatedVoteCount > 0, 'negativeVote':dto.calculatedVoteCount < 0}">
+      <span>{{dto.calculatedVoteCount}} {{'Thread.search.votes' | translate}}</span>
+    </div>
+    <div class="col-12">
+      <span> {{'Thread.search.posts' | translate : {postNum: dto.posts.length} }}</span>
+    </div>
+  </div>
+  <div class="col-11 pl-3">
+    <div class="thread-container">
+      <div>
+        <div class="thread-title-container">
+          <a routerLink="/{{threadViewRoute | strReplace:':id' : dto.id}}">
+            <span class="thread-title" [innerHTML]="dto.title"></span>
+          </a>
+          <span class="thread-posted-by"
+                [innerHtml]="'Thread.postedByUserAtTime' | translate : {user: dto.user.login, time: dto.createdDate | dateAgo}">
+          </span>
+        </div>
+      </div>
+      <div class="col-12 thread-post-body" [innerHTML]="dto.firstPost.body"></div>
+    </div>
+
+    <hr *ngIf="dto.posts.length > 0">
+
+    <div [ngClass]="{'comments-container': dto.posts.length > 2}">
+      <!--      <div *ngFor="let post of dto.posts">-->
+      <div class="comment-container" *ngFor="let post of dto.posts.slice(0,2)">
+        <div class="col-12 post-title" [innerHTML]="post.title"></div>
+        <div class="col-12 post-body" [innerHTML]="post.body"></div>
+      </div>
+    </div>
+    <div *ngIf="dto.posts.length > 2" class="show-more-link">
+      {{'Thread.search.foundInMore' | pluralTranslation : dto.hiddenPostNumber | translate : {postNum: dto.hiddenPostNumber} }}
+      <!--      Found in {{dto.posts.length - 2}} more post-->
+    </div>
+  </div>
+</div>
+
+<p-paginator
+  [rowsPerPageOptions]="[5,10,50,100,250,1000]"
+  [showCurrentPageReport]="true"
+  [totalRecords]="result.totalItems"
+  [first]="pageable.page * pageable.size"
+  [currentPageReportTemplate]="'general.currentPageReportTemplate' | translate"
+  (onPageChange)="paginate($event)"
+></p-paginator>
+
+

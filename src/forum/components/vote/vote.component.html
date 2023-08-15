@@ -1,0 +1,16 @@
+<div [ngClass]="{'grid justify-content-center': smallMode,
+                 'justify-content-center': smallMode,
+                 'flex flex-column justify-content-center align-items-center': !smallMode}">
+  <i *ngIf="!smallMode" pRipple class="pi pi-fw pi-angle-up cursor-pointer big-arrow vote-icon"
+     [ngClass]="(ownVote && ownVote.voteType === VoteType.UP ? ownVote.voteType : 'inactive')" (click)="giveVote(VoteType.UP)"></i>
+  <button *ngIf="smallMode" [ngClass]="(ownVote && ownVote.voteType === VoteType.UP ? 'active' : 'inactive')" pButton pRipple type="button" icon="pi pi-arrow-up" class="p-button-rounded p-button-text col vote-button up-vote" (click)="giveVote(VoteType.UP)"></button>
+
+
+  <div *ngIf="!smallMode" class="text-center text-5xl">{{voteCount}}</div>
+  <label *ngIf="smallMode" class="col-2 flex justify-content-center align-items-center">{{voteCount}}</label>
+
+  <i *ngIf="!smallMode" pRipple class="pi pi-fw pi-angle-down cursor-pointer big-arrow vote-icon"
+     [ngClass]="(ownVote && ownVote.voteType ===  VoteType.DOWN ? ownVote.voteType : 'inactive')"
+       (click)="giveVote(VoteType.DOWN)"></i>
+  <button *ngIf="smallMode" [ngClass]="(ownVote && ownVote.voteType ===  VoteType.DOWN ? 'active' : 'inactive')" pButton pRipple type="button" icon="pi pi-arrow-down" class="p-button-rounded p-button-text col vote-button down-vote" (click)="giveVote(VoteType.DOWN)"></button>
+</div>

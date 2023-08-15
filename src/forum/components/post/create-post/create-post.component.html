@@ -1,0 +1,18 @@
+<form [formGroup]="postForm" class="flex flex-column">
+  <div class="field">
+    <span class="p-input-icon-left flex">
+      <i class="pi pi-code"></i>
+      <input type="text" pInputText placeholder="Title" class="flex-grow-1" [formControlName]="title">
+    </span>
+  </div>
+  <div class="field">
+    <p-editor id="editor" [style]="{'height': '320px'}" [formControlName]="body"></p-editor>
+  </div>
+  <form-buttons
+    customClass="flex flex-wrap align-items-center justify-content-start"
+    [saveEnabled]="postForm.valid"
+    [cancelCallback]="cancelCallback"
+    [saveCallback]="saveCallback"
+    fixedPosition="false"
+  ></form-buttons>
+</form>

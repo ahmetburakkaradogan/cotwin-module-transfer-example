@@ -1,0 +1,25 @@
+<form [formGroup]="postForm" class="flex flex-column flex-grow-1">
+  <div class="mb-2 mt-2">
+    <span class="p-input-icon-left flex">
+      <i class="pi pi-code"></i>
+      <input type="text" pInputText placeholder="Title" class="flex-grow-1" [formControlName]="title">
+    </span>
+  </div>
+  <div class="flex flex-grow-1 justify-content-between">
+    <p-editor class="flex-grow-1" id="editor" [formControlName]="body"></p-editor>
+    <div class="flex flex-column ml-2" style="gap: 0.5rem;">
+      <button pButton pRipple
+              (click)="saveCallback()"
+              [label]="'general.save' | translate"
+              icon="pi pi-save"
+              class="p-button-success"
+      ></button>
+      <button pButton pRipple
+              (click)="cancelCallback()"
+              [label]="'general.cancel' | translate"
+              icon="pi pi-times"
+              class="p-button-secondary"
+      ></button>
+    </div>
+  </div>
+</form>

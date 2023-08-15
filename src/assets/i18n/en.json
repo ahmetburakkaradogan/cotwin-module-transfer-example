@@ -1,0 +1,718 @@
+{
+    "general": {
+      "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries",
+      "value": "Value",
+      "actions": "Actions",
+      "search": "Search",
+      "name": "Name",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "deleteConfirmTitle": "Delete?",
+      "deleteConfirmMessage": "Are you sure to delete this item?",
+      "noRecordsFound": "No records found",
+      "logout": "Logout",
+      "profile": "Profile",
+      "notSelected": "Not Selected",
+      "select": "Select",
+      "successful": "Successful",
+      "error": "Error Occurred",
+      "yes": "Yes",
+      "no": "No",
+      "true": "TRUE",
+      "false": "FALSE",
+      "headerConfirmation": "Confirmation",
+      "username": "Username",
+      "password": "Password",
+      "rememberMe": "Remember Me",
+      "signIn": "Sign In",
+      "warningMessage": "Your username or password is wrong.",
+      "suggestions": "Suggestions",
+      "suggestion1": "At least one lowercase",
+      "suggestion2": "At least one uppercase",
+      "suggestion3": "At least one numeric",
+      "suggestion4": "At least one special character",
+      "suggestion5": "Minimum 8 characters",
+      "oldPassword": "Old Password",
+      "newPassword": "New Password",
+      "changePassword": "Change Password",
+      "choose": "Choose",
+      "upload": "Upload",
+      "yarn": "Yarn",
+      "order": "Order",
+      "imageNotUploaded": "Selected image is not uploaded, would you like to continue without uploading the image?",
+      "settings": "Settings",
+      "user": "User",
+      "resetFilters": "Reset Filters",
+      "minimizeActionsColumn": "Minimize Actions Column",
+      "maximizeActionsColumn": "Maximize Actions Column",
+      "languages": {
+        "de": "German",
+        "en": "English"
+      },
+      "roles": {
+        "ROLE_ADMIN": "Administrator",
+        "ROLE_MANUFACTURER": "Manufacturer",
+        "ROLE_ENDCUSTOMER": "End Customer"
+      },
+      "primeng": {
+        "Cancel": "Cancel",
+        "today": "Today",
+        "clear": "Clear",
+        "dayNames": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "dayNamesMin": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "monthNames": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ],
+        "monthNamesShort": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+      },
+      "form": {
+        "validators": {
+          "min_max": "Number of characters must be within {{min}} and {{max}}",
+          "min_max_number": "Number must be within {{min}} and {{max}}",
+          "min_number": "Number must be larger than {{min}}",
+          "max_number": "Number must be smaller than {{max}}",
+          "required": "This field is required"
+        }
+      },
+      "dateAgo": {
+        "years": "{{interval}} years ago",
+        "months": "{{interval}} months ago",
+        "days": "{{interval}} days ago",
+        "hours": "{{interval}} hours ago",
+        "minutes": "{{interval}} minutes ago",
+        "seconds": "{{interval}} seconds ago",
+        "year": "1 year ago",
+        "month": "1 month ago",
+        "day": "1 day ago",
+        "hour": "1 hour ago",
+        "minute": "1 minute ago",
+        "second": "1 second ago"
+      },
+      "null": ""
+    },
+    "errors": {
+      "Password is too weak. It must be at least 8 characters long, should not contain any whitespaces, contain at least one number, one uppercase letter, one lowercase letter and, one special character.": "Password is too weak. It must be at least 8 characters long, should not contain any whitespaces, contain at least one number, one uppercase letter, one lowercase letter and, one special character."
+    },
+    "userManagement": {
+      "page": {
+        "label": "User Management",
+        "title": "Users",
+        "subTitle": "List Users",
+        "newUser": "New User",
+        "userName": "UserName",
+        "name": "Name",
+        "role": "Role",
+        "editUser": "Edit User",
+        "deleteUser": "Delete User",
+        "notDeletedMessage": "User Could Not Deleted",
+        "deleteMessage": "Are you sure that you want to delete this User?",
+        "userDeleted": "User Deleted",
+        "userNotDeleted": "User Not Deleted"
+      },
+      "createUser": {
+        "title": "Create User",
+        "subTitle": "Create User",
+        "users": "Users",
+        "userName": "UserName",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "webpage": "Web Page",
+        "phone": "Phone",
+        "password": "Password",
+        "role": "Role",
+        "enabled": "Enabled",
+        "Admin": "Admin",
+        "createdMessage": "User is created successfully.",
+        "notCreatedMessage": "User can not be created.",
+        "updatedMessage": "User is updated successfully.",
+        "notUpdatedMessage": "User can not be updated.",
+        "fetchedMessage": "User is created successfully.",
+        "notFetchedMessage": "User can not be fetched.",
+        "login": "Username",
+        "imageUrl": "Image URL",
+        "activated": "Activated",
+        "langKey": "Preferred Language",
+        "company": "Company",
+        "authorities": "Role",
+        "userId": "User ID"
+      },
+      "editUser": {
+        "userName": "User Name",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "yourOldPassword": "Your Old Password",
+        "newPassword": "New Password",
+        "repeatNewPassword": "Repeat New Password",
+        "enabled": "Enabled",
+        "login": "Username",
+        "imageUrl": "Image URL",
+        "activated": "Activated",
+        "langKey": "Languages",
+        "company": "Company",
+        "authorities": "Authorities",
+        "userId": "User ID",
+        "createdBy": "Created By",
+        "createdDate": "Created Date",
+        "lastModifiedBy": "Last Modified By",
+        "lastModifiedDate": "Last Modified Date"
+      }
+    },
+    "Dashboard": {
+      "page": {
+        "title": "Dashboard",
+        "home": "Home",
+        "1": "MACHINES",
+        "2": "Last Month",
+        "3": "Last Year",
+        "4": "Orders",
+        "5": "DELIVERIES",
+        "6": "THREADS",
+        "7": "Machines by Life Cycle Phases",
+        "8": "Machines by Month compared to last year",
+        "9": "Notifications",
+        "10": "Last Month",
+        "11": "Last Year"
+      }
+    },
+    "Forum": {
+      "page": {
+        "title": "Forum"
+      },
+      "search": {
+        "title": "Search in forum"
+      },
+      "filter": {
+        "threadName": "Thread Name",
+        "createdBy": "Created By",
+        "minVotes": "Min Votes",
+        "maxVotes": "Max Votes",
+        "minComments": "Min Comments",
+        "maxComments": "Max Comments"
+      }
+    },
+    "login": {
+      "username": "Username",
+      "password": "Password",
+      "rememberMe": "Remember Me",
+      "signIn": "Login"
+    },
+    "Post": {
+      "create": {
+        "create": "Create Post",
+        "title": "Title",
+        "submit": "Submit",
+        "cancel": "Cancel"
+      }
+    },
+    "Plan": {
+      "title": "Plan",
+      "new": "Create New Project",
+      "project": "Project",
+      "picture": "Picture",
+      "status": "Status",
+      "company": "Company",
+      "responsible": "Responsible",
+      "dueTo": "Due To",
+      "details": "Details",
+      "config": {
+        "title": "Configuration",
+        "caption": "Configuration for Machine"
+      },
+      "createOrder": "Order Data",
+      "orderInfo": "Order Info"
+    },
+    "Machine": {
+      "create": "Create New Machine",
+      "phase": "Phase",
+      "status": {
+        "status": "Status",
+        "moveToNextStatus": "Move To Next Status",
+        "setStatus": "Move To A Specific Status",
+        "moveToPrevStatus": "Move To Previous Status"
+      },
+      "type": "Machine Type",
+      "responsible": "Responsible User",
+      "responsibleUserNullName": "Bitte nennen Sie dem verantwortlichen Benutzer einen Namen",
+      "productionStartDate": "Production Start Date",
+      "company": "Manufacturer",
+      "targetCompany": "End Customer",
+      "paymentDate": "Payment Date",
+      "desiredDeliveryDate": "Desired Delivery Date",
+      "createMachine": {
+        "type": "Machine Type",
+        "responsible": "Responsible",
+        "deliveryDate": "Desired Delivery Date",
+        "deliveryServices": "Delivery Services",
+        "tags": "Tags",
+        "template": "Template",
+        "name": "Name",
+        "description": "Description",
+        "timeList": "Time List",
+        "machinePhase": "Machine Phase",
+        "orderDate": "Order Date",
+        "desiredDeliveryDate": "Desired Delivery Date",
+        "productionStartDate": "Production Start Date",
+        "responsibleUser": "Responsible User",
+        "templateId": "Template ID",
+        "uploadImage": "Upload Image",
+        "machineId": "Machine ID",
+        "mandatory": "All of the fields are mandatory.",
+        "createdMessage": "Machine is created successfully.",
+        "notCreatedMessage": "Machine can not be created.",
+        "orderInfo": "Order Information",
+        "deliveryInfo": "Delivery Information",
+        "orderGroupError": "The fields either be all filled or all empty",
+        "deliveryGroupError": "The fields either be all filled or all empty"
+      },
+      "editMachine": {
+        "title": "Edit Machine",
+        "subTitle": "Edit",
+        "addTask": "Add New Task",
+        "taskId": "Task ID",
+        "taskName": "Task Name",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "progress": "Progress",
+        "dependencies": "Dependencies",
+        "updatedMessage": "Machine is updated successfully.",
+        "notUpdatedMessage": "Machine can not be updated.",
+        "deletedMachine": "Machine is deleted successfully"
+      },
+      "order": {
+        "orderDate": "Order Date",
+        "paymentDate": "Payment Date",
+        "orderDetailsOf": "Order Details of"
+      },
+      "MachinePhase": {
+        "PlanPhase": "Plan Phase",
+        "BuildPhase": "Build Phase",
+        "RunPhase": "Run Phase"
+      },
+      "MachineStatus": {
+        "PlanPhase": {
+          "NEWLY_ADDED": "Newly Added",
+          "CONFIGURED": "Configured",
+          "ORDERED": "Ordered"
+        },
+        "BuildPhase": {
+          "SCHEDULING": "Scheduling",
+          "ASSEMBLY": "Assembly",
+          "DELIVERY": "Delivery"
+        },
+        "RunPhase": {
+          "UNPLANNED_DOWNTIME": "Unplanned downtime/failure",
+          "PLANNED_DOWNTIME": "Planned downtime",
+          "IN_USE": "In Use"
+        }
+      },
+      "delivery": {
+        "deliveryDate": "Delivery Date",
+        "deliveryServices": "Delivery Services",
+        "deliveryStatus": "Delivery Status",
+        "deliveryDetailsOf": "Delivery Details of",
+        "PENDING": "PENDING",
+        "DELIVERED": "DELIVERED"
+      }
+    },
+    "Product": {
+      "title": "Product",
+      "caption": "Overview of 10 machines' lifecycle"
+    },
+    "Build": {
+      "title": "Build",
+      "details": "Details",
+      "transfer": "Transfer",
+      "project": "Project",
+      "picture": "Picture",
+      "status": "Status",
+      "company": "Company",
+      "responsible": "Responsible",
+      "dueTo": "Due To",
+      "config": {
+        "title": "Configuration",
+        "caption": "Configuration for Machine"
+      },
+      "delivery": "Delivery Info"
+    },
+    "Run": {
+      "title": "Run",
+      "details": "Details",
+      "config": {
+        "title": "Configuration",
+        "caption": "Configuration for Machine"
+      },
+      "project": "Project",
+      "picture": "Picture",
+      "status": "Status",
+      "company": "Company",
+      "responsible": "Responsible",
+      "dueTo": "Due To",
+      "dashboard": {
+        "title": "Dashboard ",
+        "caption": "Dashboard for Machine"
+      },
+      "service": {
+        "title": "Maintenance Requests",
+        "caption": "Service Requests for Machine"
+      },
+      "orderParts": {
+        "title": "Order Parts",
+        "caption": "Order Parts for Machine"
+      }
+    },
+    "Company": {
+      "company": "Company",
+      "companyId": "Company ID",
+      "companyName": "Company Name"
+    },
+    "companyManagement": {
+      "createCompany": {
+        "title": "Create Company",
+        "companyName": "Company Name",
+        "companyInfo": "Company Info",
+        "contactPerson": "Contact Person",
+        "address": "Address",
+        "createdMessage": "Company is created successfully.",
+        "notCreatedMessage": "Company can not be created.",
+        "updatedMessage": "Company is updated successfully.",
+        "notUpdatedMessage": "Company can not be updated.",
+        "initialUser": "Initial User",
+        "addInitialUser": "Add Initial User"
+      },
+      "companyDetails": "Company Details"
+    },
+    "administrationOverview": {
+      "title": "Administration Overview",
+      "userPage": {
+        "title": "Users",
+        "createUser": "Create User"
+      },
+      "tagTypePage": {
+        "title": "Tags and Types",
+        "createTag": "Create Tag",
+        "createType": "Create Type",
+        "tagTitle": "Tags",
+        "typeTitle": "Machine Types"
+      },
+      "companyPage": {
+        "title": "Company",
+        "createCompany": "Create Company"
+      }
+    },
+    "userList": {
+      "userId": "User ID",
+      "username": "User Name",
+      "details": "Details",
+      "deleteUser": "Delete User",
+      "confirmationMessage": "Are you sure that you want to delete this user?",
+      "userDeletedMessage": "User Deleted",
+      "userNotDeletedMessage": "User Could Not Deleted",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "companyName": "Company",
+      "createdDate": "Created Date",
+      "noCompany": "No Company"
+    },
+    "companyList": {
+      "companyId": "Company ID",
+      "companyName": "Company Name",
+      "details": "Details",
+      "deleteCompany": "Delete Company",
+      "confirmationMessage": "Are you sure that you want to delete this company?",
+      "companyDeletedMessage": "Company Deleted",
+      "companyNotDeletedMessage": "Company Could Not Deleted"
+    },
+    "tagList": {
+      "tagId": "Id",
+      "name": "Name",
+      "deleted": "Tag Deleted",
+      "notDeleted": "Tag Not Deleted",
+      "deleteConfirmation": "Are you sure that you want to delete this tag?",
+      "created": "Tag Created",
+      "edited": "Tag Edited"
+    },
+    "Notification": {
+      "title": "Notifications",
+      "message": "Message",
+      "date": "Date",
+      "remove": "Delete Notification",
+      "markAsRead": "Mark As Read",
+      "markAsUnread": "Mark As Unread",
+      "status": "Status",
+      "confirmationMessage": "Are you sure that you want to delete this notification?",
+      "notificationDeletedMessage": "Notification Deleted",
+      "notificationNotDeletedMessage": "Notification Could Not Deleted",
+      "notificationMarkReadMessage": "Notification Marked as Read",
+      "notificationMarkUnreadMessage": "Notification Marked as Unread",
+      "unread": "Unread",
+      "all": "All"
+    },
+    "createOrder": {
+      "noOrderInformationWarning": "No order information was found for this machine.",
+      "orderDeleteConfirmationMessage": "Are you sure you want to delete order information for this Machine",
+      "orderDeleteConfirmationTitle": "Please Beware and Confirm",
+      "orderInformationUpdated": "Order information is updated for Machine "
+    },
+    "ServiceRequests": {
+      "title": "Service Requests for Machine ",
+      "description": "Description",
+      "serviceDate": "Service Date",
+      "edit": "Edit",
+      "createLabel": "Create",
+      "updated": "Service Request Updated",
+      "created": "Service Request Created",
+      "deleted": "Service Request Deleted",
+      "editServiceRequest": {
+        "serviceDate": "Service Date",
+        "description": "Description",
+        "deleteConfirmationMessage": "Are you sure you want to delete service request for this Machine",
+        "deleteConfirmationTitle": "Please Beware and Confirm"
+      },
+      "details": "Service Request Details"
+    },
+    "createDelivery": {
+      "noDeliveryInformationWarning": "No delivery found for this Machine",
+      "deliveryDeleteConfirmationTitle": "Please Beware and Confirm",
+      "deliveryDeleteConfirmationMessage": "Are you sure you want to delete delivery for this Machine?",
+      "deliveryInformationUpdated": "Delivery information is updated for Machine"
+    },
+    "SearchResults": {
+      "title": "Search Results"
+    },
+    "Address": {
+      "address": "Address",
+      "street": "Street",
+      "postcode": "Post Code",
+      "city": "City",
+      "country": "Country"
+    },
+    "Timeline": {
+      "name": "Name",
+      "progress": "Progress"
+    },
+    "Knowledge": {
+      "title": "Knowledge",
+      "forumTitle": "Forum",
+      "explorerTitle": "Explorer",
+      "toKnow": "To Know"
+    },
+    "Explorer": {
+      "title": "Explorer"
+    },
+    "Thread": {
+      "browserLabel": "Search",
+      "filterLabel": "Filter",
+      "postedBy": "Posted by",
+      "postedByUserAtTime": "posted by {{user}} {{time}}",
+      "ago": "ago",
+      "alreadyVoted": "Already voted to this Thread",
+      "edited": "Thread Edited",
+      "deleted": "Thread Deleted",
+      "titleEmptyError": "Thread Title Cannot Be Empty",
+      "deleteConfirmation": "Are you sure you want to delete this Thread?",
+      "createThread": {
+        "createLabel": "Create",
+        "title": "Create Thread",
+        "toolTip": "Create New Thread",
+        "requiredTitle": "Thread title cannot be empty.",
+        "maxLengthTitle": "Max title length is 200 characters.",
+        "requiredBody": "Thread body cannot be empty."
+      },
+      "headers": {
+        "votes": "Votes",
+        "posts": "Posts",
+        "comments": "Comments",
+        "thread": "Threads"
+      },
+      "view": {
+        "title": "Thread View",
+        "back": "Back",
+        "newPost": "New Post"
+      },
+      "post": {
+        "replyLabel": "Reply",
+        "replyPrefix": "Re: ",
+        "alreadyVoted": "Already voted to this post.",
+        "deleteConfirmation": "Are you sure you want to delete this post?",
+        "deleted": "Post Deleted",
+        "edited": "Post Edited",
+        "cannotDeleteFirstPost": "Cannot delete the first post of a thread",
+        "defaultTitle": "Title"
+      },
+      "quotePost": {
+        "title": "Quote",
+        "sender": "Message sender ",
+        "createdTime": "Created Date"
+      },
+      "search": {
+        "votes": "votes",
+        "posts": "found in {{postNum}} comments",
+        "foundInMore": {
+          "plural": "Found in {{postNum}} more posts",
+          "singular": "Found in one more post"
+        }
+      }
+    },
+    "typeList": {
+      "typeId": "Id",
+      "name": "Name",
+      "deleted": "Type Deleted",
+      "notDeleted": "Type Not Deleted",
+      "created": "Type Created",
+      "edited": "Type Edited",
+      "deleteConfirmation": "Are you sure that you want to delete this type?"
+    },
+    "Profile": {
+      "title": "Profile",
+      "errorMessage": {
+        "1": "You should input your current password to change password.",
+        "2": "Your new password fields are not matching.",
+        "3": "Your new password length must be between 4 and 100.",
+        "invalidPassword": "We have no registered user with this combination of username/email and password."
+      },
+      "removeImage": "Remove Image"
+    },
+    "User": {
+      "title": "User Details"
+    },
+    "BreadCrumb": {
+      "home": "Home",
+      "administration": "Administration",
+      "userManagement": "User Management",
+      "companyManagement": "Company Management",
+      "tagAndTypeManagement": "Tag and Type Management",
+      "administrationOverview": "Administration Overview",
+      "dashboard": "Dashboard",
+      "forum": "Forum",
+      "forumSearch": "Forum Search",
+      "createThread": "Create Thread",
+      "machinePlanList": "Machine Plan List",
+      "createMachine": "Create Machine",
+      "products": "Products",
+      "machineBuildList": "Machine Build List",
+      "machineRunList": "Machine Run List",
+      "machineRunDashboard": "Machine Run Dashboard",
+      "machinePlanConfig": "Machine Plan Config",
+      "machineDetails": "Machine Details",
+      "companyDetails": "Company Details",
+      "userDetails": "User Details",
+      "notifications": "Notifications",
+      "machineEdit": "Machine Edit",
+      "machineBuildConfig": "Machine Build Config",
+      "machineRunOrderParts": "Machine Run Order Parts",
+      "searchResults": "Search Results",
+      "serviceRequests": "Service Requests",
+      "knowledge": "Knowledge",
+      "coTwinExplorer": "CoTwin Explorer",
+      "thread": "Thread",
+      "profile": "Profile",
+      "config": "Config",
+      "machineCreate": "Machine Create",
+      "catalog": "Catalog",
+      "machines": "Filter Machines",
+      "companyCreate": "Create Company",
+      "userCreate": "Create User",
+      "orderParts": "Order Parts"
+    },
+    "QuickLinks": {
+      "title": "Quick Links",
+      "createMachine": "Create a New Machine",
+      "createThread": "Create a New Thread"
+    },
+    "catalog": {
+      "title": "Catalog",
+      "id": "ID",
+      "name": "Name",
+      "item": "Items",
+      "createCatalog": "Create Catalog",
+      "selected": "Selected",
+      "available": "Available",
+      "hardware": {
+        "title": "Components",
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "picture": "Picture",
+        "model": "Model",
+        "details": "Details",
+        "createHardware": "Create Component",
+        "uploadImage": "Upload Component Image",
+        "uploadModel": "Upload Component Model",
+        "edited": "Component Edited",
+        "created": "Component Created",
+        "deleted": "Component Deleted",
+        "deleteConfirmation": "Are you sure that you want to delete this component?",
+        "undo": "Undo Component Changes",
+        "save": "Save",
+        "manufacturer": "Manufacturer",
+        "compatibleMachineType": "Compatible Machine Type",
+        "tags": "Tags",
+        "creatorCompany": "Creator Company"
+      },
+      "software": {
+        "title": "Services",
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "picture": "Picture",
+        "details": "Details",
+        "createSoftware": "Create Service",
+        "uploadImage": "Upload Service Image",
+        "edited": "Service Edited",
+        "created": "Service Created",
+        "deleted": "Service Deleted",
+        "deleteConfirmation": "Are you sure that you want to delete this service?",
+        "undo": "Undo Service Changes",
+        "save": "Save",
+        "creatorCompany": "Creator Company"
+      }
+    },
+    "MachineAllList": {
+      "title": "All Machines",
+      "tag": "Filter all machines by tag:",
+      "name": "Filter all machines by name:",
+      "companyName": "Filter all machines by company name:",
+      "responsibleUserName": "Filter all machines by responsible user name:",
+      "phase": "Filter all machines by phase:",
+      "targetCompanyName": "Filter all machines by target company name:"
+    }
+  }
+  
